@@ -9,6 +9,7 @@ import pl.coderslab.charity.model.utils.InstitutionDTO;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -42,6 +43,10 @@ public class InstitutionService {
 
     public void deleteById(Long id) {
         institutionRepository.deleteById(id);
+    }
+
+    public Optional<Integer> countAllBy(){
+        return institutionRepository.countAllBy();
     }
 
     private InstitutionDTO toDto(Institution institution) {

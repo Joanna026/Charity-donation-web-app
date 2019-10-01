@@ -9,6 +9,7 @@ import pl.coderslab.charity.model.utils.DonationDTO;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -43,6 +44,12 @@ public class DonationService {
     public void deleteById(Long id) {
         donationRepository.deleteById(id);
     }
+
+    public Optional<Integer> getTotalQuantity() {
+        return donationRepository.getTotalQuantity();
+    }
+
+
 
     private DonationDTO toDto(Donation donation) {
         return modelMapper.map(donation, DonationDTO.class);

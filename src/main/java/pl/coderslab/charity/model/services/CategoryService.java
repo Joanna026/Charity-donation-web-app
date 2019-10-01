@@ -9,6 +9,7 @@ import pl.coderslab.charity.model.utils.CategoryDTO;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -46,6 +47,7 @@ public class CategoryService {
     public void deleteById(Long id) {
         categoryRepository.deleteById(id);
     }
+
 
     private CategoryDTO toDto(Category category) {
         return modelMapper.map(category, CategoryDTO.class);
