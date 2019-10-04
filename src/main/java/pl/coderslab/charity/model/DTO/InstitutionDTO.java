@@ -1,4 +1,4 @@
-package pl.coderslab.charity.model.utils;
+package pl.coderslab.charity.model.DTO;
 
 import lombok.Data;
 

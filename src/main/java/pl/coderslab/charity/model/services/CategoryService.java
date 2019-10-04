@@ -4,12 +4,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.entities.Category;
 import pl.coderslab.charity.model.repositories.CategoryRepository;
-import pl.coderslab.charity.model.utils.CategoryDTO;
+import pl.coderslab.charity.model.DTO.CategoryDTO;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional

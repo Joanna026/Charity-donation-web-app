@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.services.CategoryService;
 import pl.coderslab.charity.model.services.DonationService;
 import pl.coderslab.charity.model.services.InstitutionService;
-import pl.coderslab.charity.model.utils.DonationDTO;
+import pl.coderslab.charity.model.DTO.DonationDTO;
 
 @Controller
 @RequestMapping("/donation")
@@ -30,7 +30,7 @@ public class DonationController {
         model.addAttribute("categories", categoryService.getAll());
         model.addAttribute("institutions", institutionService.getAll());
         model.addAttribute(new DonationDTO());
-        return "donationForm";
+        return "form";
     }
 
 

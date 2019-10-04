@@ -1,11 +1,10 @@
-package pl.coderslab.charity.model.utils;
+package pl.coderslab.charity.model.DTO;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.model.entities.Category;
-import pl.coderslab.charity.model.entities.Institution;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 import javax.validation.constraints.Positive;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -20,7 +19,7 @@ public class DonationDTO {
     @Positive
     private Integer quantity;
     private List<Category> categories = new ArrayList<>();
-    private Institution institution;
+    private InstitutionDTO institutionDTO;
     private String street;
     private String City;
     private String zipCode;

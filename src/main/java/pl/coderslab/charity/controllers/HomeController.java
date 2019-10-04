@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.services.DonationService;
 import pl.coderslab.charity.model.services.InstitutionService;
-import pl.coderslab.charity.model.utils.InstitutionDTO;
+import pl.coderslab.charity.model.DTO.InstitutionDTO;
 
 import java.util.List;
 import java.util.Optional;

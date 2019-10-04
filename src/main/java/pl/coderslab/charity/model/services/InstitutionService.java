@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.entities.Institution;
 import pl.coderslab.charity.model.repositories.InstitutionRepository;
-import pl.coderslab.charity.model.utils.InstitutionDTO;
+import pl.coderslab.charity.model.DTO.InstitutionDTO;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
