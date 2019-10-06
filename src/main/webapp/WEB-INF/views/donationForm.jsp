@@ -98,11 +98,7 @@
                             <form:checkbox path="categories" value="${category}" class="checkbox description"/><span class="checkbox"></span>
                             <span class="description">${category.name}</span>
                         </c:forEach>
-<%--                        <form:checkboxes path="categories" class="checkbox description"--%>
-<%--                                         items="${categories}" itemLabel="name" itemValue="id"/>--%>
 
-<%--                                <span class="checkbox"></span>--%>
-<%--                                       <span class="description">${}</span>--%>
                     </label>
                 </div>
 
