@@ -18,7 +18,7 @@ public class DonationDTO {
     private Long id;
     @Positive
     private Integer quantity;
-    private List<Category> categories = new ArrayList<>();
+    private List<CategoryDTO> categories = new ArrayList<>();
     private InstitutionDTO institutionDTO;
     private String street;
     private String City;

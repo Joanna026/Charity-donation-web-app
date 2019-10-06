@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
    */
   class FormSelect {
     constructor($el) {
-      this.$el =$("#select");
-      this.options = [$el.children];
+      this.$el =$el;
+      this.options = [...$el.children];
       this.init();
     }
 

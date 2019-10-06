@@ -1,5 +1,6 @@
 package pl.coderslab.charity.model.entities;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +16,9 @@ public class Category extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
 
+    public Category() {
+        super();
+    }
 
     @Override
     public String toString() {

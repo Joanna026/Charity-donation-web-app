@@ -30,7 +30,7 @@ public class DonationController {
         model.addAttribute("categories", categoryService.getAll());
         model.addAttribute("institutions", institutionService.getAll());
         model.addAttribute(new DonationDTO());
-        return "form";
+        return "donationForm";
     }
 
 

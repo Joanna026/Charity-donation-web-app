@@ -3,6 +3,8 @@ package pl.coderslab.charity.model.entities;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.coderslab.charity.model.DTO.CategoryDTO;
+import pl.coderslab.charity.model.DTO.InstitutionDTO;
 
 import javax.persistence.*;
 import java.time.LocalDate;
