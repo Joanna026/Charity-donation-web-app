@@ -31,17 +31,13 @@ public class HomeController {
             model.addAttribute("institutions", institutions);
         }
 
-        Optional<Integer> optionalTotal = donationService.getTotalQuantity();
-        optionalTotal.ifPresent(totalQuantity -> {
-            model.addAttribute("totalQuantity", totalQuantity);
-        });
+        model.addAttribute("totalQuantity", donationService.getTotalQuantity());
 
         Optional<Integer> optionalCountInsititutions = institutionService.countAllBy();
         optionalCountInsititutions.ifPresent(institutionNumber -> {
             model.addAttribute("institutionNumber", institutionNumber);
         });
 
-//        log.debug("kotr");
         return "index";
     }
 

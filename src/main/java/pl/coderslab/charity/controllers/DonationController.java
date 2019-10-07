@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pl.coderslab.charity.model.services.CategoryService;
 import pl.coderslab.charity.model.services.DonationService;
 import pl.coderslab.charity.model.services.InstitutionService;

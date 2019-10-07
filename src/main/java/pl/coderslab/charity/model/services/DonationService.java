@@ -45,7 +45,7 @@ public class DonationService {
         donationRepository.deleteById(id);
     }
 
-    public Optional<Integer> getTotalQuantity() {
+    public Integer getTotalQuantity() {
         return donationRepository.getTotalQuantity();
     }
 
