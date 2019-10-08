@@ -167,12 +167,9 @@ $(() => {
             // TODO: get data from inputs and show them in summary
 
             if (this.currentStep === 5) {
-                // const institution = $("#institution-summary");
-                // let institutionMessage = $("#institution-message");
-                // institutionMessage.addParameter($("#foundation").val(), 0);
-                // institutionMessage.addParameter($("#city").val(), 1);
-                //     // .arguments($("#foundation"), $("#city"))
-                // $(`${institutionMessage.val()}`).appendTo(institution);
+
+                this.prepareQuantitySummaryMessage();
+                this.prepareInstitutionSummaryMessage();
 
                 const address = $("#address");
                 $(`<li>${$("#street").val()} </li> 
@@ -189,10 +186,33 @@ $(() => {
                     $(`<li>${moreInfo.val()}</li>`).appendTo(dateTime);
                 }
             }
+        }
+
+
+        prepareQuantitySummaryMessage() {
+
+            var quantity = $("#quantity");
+            var basicMessage = $("#quantity2-4Message").val();
+
+            $(`<p>${quantity.val() + " " + basicMessage}</p>`).appendTo($("#quantity-summary"));
+        }
+
+
+        prepareInstitutionSummaryMessage() {
+
+            var institution = $("input[name=organization]:checked").val();
+            var city = $("#city").val();
+            var messagePart1 = $("#institutionMessage1").val();
+            var messagePart2 = $("#institutionMessage2").val();
+
+            $(`<p>${messagePart1 + " " + institution + " " + messagePart2 + " " + city}</p>`).appendTo($("#institution-summary"));
+
 
         }
 
     }
+
+
 
     const form = document.querySelector(".form--steps");
     if (form !== null) {

@@ -9,6 +9,7 @@ import pl.coderslab.charity.model.DTO.CategoryDTO;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -47,6 +48,21 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
+    public CategoryDTO getById(Long categoryId) {
+
+        Optional<Category> optionalCategory = categoryRepository.findById(categoryId);
+
+
+        return toDto(categoryRepository.findById(categoryId).orElseGet(() -> {
+            return null;
+        });
+//        optionalCategory.ifPresent(category -> {
+//           return toDto(category);
+//       });
+//
+//        return null;
+    }
+
 
     private CategoryDTO toDto(Category category) {
         return modelMapper.map(category, CategoryDTO.class);
@@ -55,4 +71,6 @@ public class CategoryService {
     private Category toEntity(CategoryDTO categoryDTO) {
         return modelMapper.map(categoryDTO, Category.class);
     }
+
+
 }

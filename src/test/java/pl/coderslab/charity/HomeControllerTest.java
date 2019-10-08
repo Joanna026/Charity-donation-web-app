@@ -1,14 +1,15 @@
 package pl.coderslab.charity;
 
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.context.WebApplicationContext;
 import pl.coderslab.charity.controllers.HomeController;
 import pl.coderslab.charity.model.DTO.InstitutionDTO;
-import pl.coderslab.charity.model.entities.Institution;
 import pl.coderslab.charity.model.services.InstitutionService;
 
 import java.util.Arrays;
@@ -37,12 +38,13 @@ public class HomeControllerTest {
 
     @Before
     public void setUp() {
-//       mockMvc = webAppContextSetup(webApplicationContext).build();
-//
-//        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
-//        when(this.institutionService.getAll()).thenReturn(institutions);
+//      Mock mockMvc = webAppContextSetup(webApplicationContext).build();
+
+        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
+        when(this.institutionService.getAll()).thenReturn(institutions);
     }
 
+    @Test
     public void test_home_contains_institution_list() throws Exception {
 
 //        mockMvc.perform(get("/"))

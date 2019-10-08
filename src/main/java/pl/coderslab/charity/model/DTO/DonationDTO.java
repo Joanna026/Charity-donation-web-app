@@ -26,4 +26,8 @@ public class DonationDTO {
 
     public DonationDTO() {
     }
+
+    public InstitutionDTO getInstitutionDTO() {
+        return institutionDTO;
+    }
 }

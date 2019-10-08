@@ -48,9 +48,9 @@
                         <c:forEach items="${categories}" var="category">
                 <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="checkbox" name="categories" value="${category}"
+                                <input type="checkbox" name="categories" value="${category.id}"
                                        data-name="${category.name}"/>
-                            <span class="checkbox"><form:checkbox path="categories" value="${category}"/></span>
+<%--                            <span class="checkbox"><form:checkbox path="categories" value="${category}"/></span>--%>
                             <span class="description">${category.name}</span>
                             </label>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         <spring:message code="step2Label.message"/>
-                        <input type="number" name="bags" step="1" min="1" />
+                        <input type="number" name="bags" id="quantity" step="1" min="1" />
                     </label>
                 </div>
 
@@ -88,7 +88,7 @@
                 <c:forEach items="${institutions}" var="institution">
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input type="radio" name="organization" value="${institution}" />
+                        <input type="radio" name="organization" value="${institution.name}"/>
                         <span class="checkbox radio"><form:radiobutton path="institutionDTO" value="institution"/></span>
                         <span class="description">
                   <div class="title"><spring:message code="foundationName.message" arguments="${institution.name}"/></div>
@@ -118,7 +118,7 @@
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="city.message"/> <form:input path="city" id="city" /> </label>
+                            <label> <spring:message code="city.message"/> <form:input path="city" id="city" var="city" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -137,11 +137,11 @@
                     <div class="form-section--column">
                         <h4><spring:message code="pickUpTime.message"/> </h4>
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDate" id="data" /> </label>
+                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDate" id="data" type="date"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label><spring:message code="time.message"/>  <form:input path="pickUpTime" id="time" /> </label>
+                            <label><spring:message code="time.message"/>  <form:input path="pickUpTime" id="time" type="time" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -169,15 +169,15 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text" id="quantity-summary">
-                                    4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                    <input id="quantity2-4Message" type="hidden" value="<spring:message code='summaryQuantity.message'/>"/>
+                                </span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
                                 <span class="summary--text" id="institution-summary">
-                                    <c:set var="institutionMessage"> <spring:message code="summaryInstitution.message"/></c:set>
-                                    <input id="institution-message" type="hidden" value="${institutionMessage}">
+                                    <input id="institutionMessage1" type="hidden" value="<spring:message code='summaryInstitutionPart1.message'/>"/>
+                                    <input id="institutionMessage2" type="hidden" value="<spring:message code='summaryInstitutionPart2.message'/>"/>
                                 </span>
                             </li>
                         </ul>
