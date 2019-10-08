@@ -165,7 +165,6 @@ $(() => {
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
             // TODO: get data from inputs and show them in summary
-
             if (this.currentStep === 5) {
 
                 this.prepareQuantitySummaryMessage();
@@ -179,22 +178,29 @@ $(() => {
                 const dateTime = $("#date-time");
                 $(`<li>${$("#date").val()} </li> 
                     <li>${$("#time").val()}</li>`).appendTo(dateTime);
-                const moreInfo = $("#more-info");
+                const moreInfo = $("#more-info").val();
                 if (moreInfo===null){
-                    $(`<li> ${$("#noComment").val()} </li>`).appendTo(dateTime);
+                    var message = $("#noComment").val();
+                    $(`<li> ${message} </li>`).appendTo(dateTime);
                 } else {
-                    $(`<li>${moreInfo.val()}</li>`).appendTo(dateTime);
+                    $(`<li>${moreInfo}</li>`).appendTo(dateTime);
                 }
             }
+
+
         }
 
 
         prepareQuantitySummaryMessage() {
-
-            var quantity = $("#quantity");
-            var basicMessage = $("#quantity2-4Message").val();
-
-            $(`<p>${quantity.val() + " " + basicMessage}</p>`).appendTo($("#quantity-summary"));
+            var quantity = $("#quantity").val();
+            if (parseInt(quantity) === 1) {
+                var basicMessage = $("#quantity1Message").val();
+            } else if (parseInt(quantity)  >= 2 && parseInt(quantity)  <= 4) {
+                var basicMessage = $("#quantity2-4Message").val();
+            } else {
+                var basicMessage = $("#quantity5andMoreMessage").val();
+            }
+            $(`<p>${quantity + " " + basicMessage}</p>`).appendTo($("#quantity-summary"));
         }
 
 

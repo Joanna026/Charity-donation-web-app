@@ -37,13 +37,8 @@ public class DonationController {
 
 
     @PostMapping
-    public String processDonationForm(DonationDTO donationDTO,
-                                      @RequestParam List<Long> categories) {
+    public String processDonationForm(DonationDTO donationDTO) {
 
-        List<CategoryDTO> categoryList = new ArrayList<>();
-        for (Long categoryId : categories) {
-            categoryList.add(categoryService.getById(categoryId));
-        }
         donationService.save(donationDTO);
         return "redirect:/";
     }

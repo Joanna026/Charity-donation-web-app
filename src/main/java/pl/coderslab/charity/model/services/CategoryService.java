@@ -52,15 +52,9 @@ public class CategoryService {
 
         Optional<Category> optionalCategory = categoryRepository.findById(categoryId);
 
-
         return toDto(categoryRepository.findById(categoryId).orElseGet(() -> {
             return null;
-        });
-//        optionalCategory.ifPresent(category -> {
-//           return toDto(category);
-//       });
-//
-//        return null;
+        }));
     }
 
 

@@ -14,12 +14,12 @@ public class DonationDTO {
 
     @Positive
     private Integer quantity;
-    private List<CategoryDTO> categories = new ArrayList<>();
     private InstitutionDTO institutionDTO;
+    private CategoryDTO categoryDTO;
     private String street;
     private String city;
     private String zipCode;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;

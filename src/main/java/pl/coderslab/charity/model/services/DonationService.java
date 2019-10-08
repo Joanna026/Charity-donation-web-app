@@ -2,14 +2,13 @@ package pl.coderslab.charity.model.services;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import pl.coderslab.charity.model.DTO.DonationDTO;
 import pl.coderslab.charity.model.entities.Donation;
 import pl.coderslab.charity.model.repositories.DonationRepository;
-import pl.coderslab.charity.model.DTO.DonationDTO;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -24,21 +23,21 @@ public class DonationService {
     }
 
 
-    public void save(DonationDTO donationDTO) {
-        donationRepository.save(toEntity(donationDTO));
+    public void save(DonationDTO DonationDTO) {
+        donationRepository.save(toEntity(DonationDTO));
     }
 
     public List<DonationDTO> getAll() {
-        List<DonationDTO> donationDtoList = new ArrayList<>();
+        List<DonationDTO> DonationDtoList = new ArrayList<>();
 
         for(Donation donation : donationRepository.findAll()) {
-            donationDtoList.add(toDto(donation));
+            DonationDtoList.add(toDto(donation));
         }
-        return donationDtoList;
+        return DonationDtoList;
     }
 
-    public void update(DonationDTO donationDTO) {
-        donationRepository.save(toEntity(donationDTO));
+    public void update(DonationDTO DonationDTO) {
+        donationRepository.save(toEntity(DonationDTO));
     }
 
     public void deleteById(Long id) {
@@ -55,7 +54,7 @@ public class DonationService {
         return modelMapper.map(donation, DonationDTO.class);
     }
 
-    private Donation toEntity(DonationDTO donationDTO) {
-        return modelMapper.map(donationDTO, Donation.class);
+    private Donation toEntity(DonationDTO DonationDTO) {
+        return modelMapper.map(DonationDTO, Donation.class);
     }
 }

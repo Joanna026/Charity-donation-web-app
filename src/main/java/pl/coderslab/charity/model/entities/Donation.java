@@ -27,7 +27,7 @@ public class Donation extends BaseEntity{
     private String street;
     private String City;
     private String zipCode;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;

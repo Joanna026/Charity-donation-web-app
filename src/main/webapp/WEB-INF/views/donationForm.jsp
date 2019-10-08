@@ -50,7 +50,7 @@
                             <label>
                                 <input type="checkbox" name="categories" value="${category.id}"
                                        data-name="${category.name}"/>
-<%--                            <span class="checkbox"><form:checkbox path="categories" value="${category}"/></span>--%>
+                            <span class="checkbox"><form:checkbox path="categoryDTO" value="category"/></span>
                             <span class="description">${category.name}</span>
                             </label>
                 </div>
@@ -137,7 +137,7 @@
                     <div class="form-section--column">
                         <h4><spring:message code="pickUpTime.message"/> </h4>
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDate" id="data" type="date"/> </label>
+                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDate" id="date" type="date" pattern = "dd-MM-yyyy"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -147,7 +147,7 @@
                         <div class="form-group form-group--inline">
                             <label>
                                 <spring:message code="comment.message"/>
-                                <form:textarea path="pickUpComment" id="more_info" rows="5"/>
+                                <form:textarea path="pickUpComment" id="more-info" rows="5"/>
                             </label>
                         </div>
                     </div>
@@ -169,7 +169,9 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text" id="quantity-summary">
-                                    <input id="quantity2-4Message" type="hidden" value="<spring:message code='summaryQuantity.message'/>"/>
+                                    <input id="quantity1Message" type="hidden" value="<spring:message code='summaryQuantity1.message'/>"/>
+                                    <input id="quantity2-4Message" type="hidden" value="<spring:message code='summaryQuantity2-4.message'/>"/>
+                                    <input id="quantity5andMoreMessage" type="hidden" value="<spring:message code='summaryQuantity5andMore.message'/>"/>
                                 </span>
                             </li>
 
