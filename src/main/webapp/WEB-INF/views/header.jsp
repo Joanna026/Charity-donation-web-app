@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <title><spring:message code="app.title"/></title>
 
     <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
 
@@ -17,24 +17,24 @@
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href="" class="btn btn--small btn--without-border"><spring:message code="login.message"/></a></li>
+            <li><a href="#" class="btn btn--small btn--highlighted"><spring:message code="createAccount.message"/>o</a></li>
         </ul>
 
         <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="#" class="btn btn--without-border active"><spring:message code="start.message"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="what.message"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="aboutUsTitle.message"/> </a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="institutions.message"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="contact.message"/></a></li>
         </ul>
     </nav>
 
     <div class="slogan container container--90">
         <div class="slogan--item">
             <h1>
-                Zacznij pomagać!<br/>
-                Oddaj niechciane rzeczy w zaufane ręce
+                <spring:message code="startHelping.message"/><br/>
+                <spring:message code="give.message"/>
             </h1>
         </div>
     </div>

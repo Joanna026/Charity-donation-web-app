@@ -17,4 +17,5 @@ public class CharityApplication {
         SpringApplication.run(CharityApplication.class, args);
     }
 
+
 }

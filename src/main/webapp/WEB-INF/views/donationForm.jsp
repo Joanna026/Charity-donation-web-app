@@ -137,7 +137,7 @@
                     <div class="form-section--column">
                         <h4><spring:message code="pickUpTime.message"/> </h4>
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDate" id="date" type="date" pattern = "dd-MM-yyyy"/> </label>
+                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDateS" id="date" type="date" pattern = "dd-MM-yyyy"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">

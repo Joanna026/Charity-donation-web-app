@@ -39,7 +39,8 @@ public class DonationController {
     @PostMapping
     public String processDonationForm(DonationDTO donationDTO) {
 
+
         donationService.save(donationDTO);
-        return "redirect:/";
+        return "formConfirmation";
     }
 }

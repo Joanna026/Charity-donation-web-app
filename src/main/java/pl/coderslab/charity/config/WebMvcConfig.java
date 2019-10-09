@@ -26,4 +26,6 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         super.addArgumentResolvers(argumentResolvers);
         ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().applicationContext(this.applicationContext).build();
     }
+
+
 }
