@@ -20,7 +20,7 @@
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                <spring:message code="hello.message" arguments="${'user'}"/>
+                <spring:message code="hello.message" arguments="${'#httpServletRequest.remoteUser'}"/>
                 <ul class="dropdown">
                     <li><a href="#"><spring:message code="myProfile.message"/></a></li>
                     <li><a href="#"><spring:message code="myDonations.message"/></a></li>

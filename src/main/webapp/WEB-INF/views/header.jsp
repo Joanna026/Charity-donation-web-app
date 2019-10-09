@@ -17,7 +17,7 @@
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border"><spring:message code="login.message"/></a></li>
+            <li><a href="<c:url value="/login"/>" class="btn btn--small btn--without-border"><spring:message code="login.message"/></a></li>
             <li><a href="#" class="btn btn--small btn--highlighted"><spring:message code="createAccount.message"/>o</a></li>
         </ul>
 

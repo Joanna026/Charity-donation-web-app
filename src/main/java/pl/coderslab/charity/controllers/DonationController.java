@@ -3,14 +3,10 @@ package pl.coderslab.charity.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.charity.model.DTO.CategoryDTO;
 import pl.coderslab.charity.model.services.CategoryService;
 import pl.coderslab.charity.model.services.DonationService;
 import pl.coderslab.charity.model.services.InstitutionService;
 import pl.coderslab.charity.model.DTO.DonationDTO;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/donation")
