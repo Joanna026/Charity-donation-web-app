@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group form-group--buttons">
-            <a href="#" class="btn btn--without-border"><spring:message code="createAccount.message"/></a>
+            <a href="<c:url value="/add"/>" class="btn btn--without-border"><spring:message code="createAccount.message"/></a>
             <button class="btn" type="submit"><spring:message code="login.message"/></button>
         </div>
     </form>

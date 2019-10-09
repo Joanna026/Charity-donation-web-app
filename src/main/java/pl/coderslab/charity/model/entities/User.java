@@ -16,9 +16,14 @@ public class User extends BaseEntity {
     private String email;
     @Column(nullable = false)
     private String password;
+    private Boolean enabled;
     @OneToOne
     private Role authority;
 
+    public User() {
+        super();
+        this.enabled = false;
+    }
 
     @Override
     public String toString() {
