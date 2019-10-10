@@ -21,9 +21,9 @@
 
 <section class="login-page">
     <h2><spring:message code="login.message"/></h2>
-    <form action="/login" method="post">
+    <form action="login" method="POST">
         <div class="form-group">
-            <input type="text" name="username" placeholder="Username" />
+            <input type="text" name="username" placeholder="<spring:message code="username.placeholder"/>" />
         </div>
         <div class="form-group">
             <input type="password" name="password" placeholder="<spring:message code="password.placeholder"/>" />

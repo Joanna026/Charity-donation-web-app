@@ -49,15 +49,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/add").anonymous()
                 .antMatchers("/resources/**").permitAll()
+                .antMatchers("/donation").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/donation")
                 .and()
                 .logout()
-                .permitAll();
+                .logoutSuccessUrl("/")
+                .and()
+                .csrf().disable()
+                ;
     }
 
 

@@ -25,6 +25,14 @@
             <form:input type="text" path="username" placeholder="${usernamePlaceholder}" />
         </div>
         <div class="form-group">
+            <spring:message code="firstname.placeholder" var="firstnamePlaceholder"/>
+            <form:input type="text" path="firstname" placeholder="${firstnamePlaceholder}" />
+        </div>
+        <div class="form-group">
+            <spring:message code="lastname.placeholder" var="lastnamePlaceholder"/>
+            <form:input type="text" path="lastname" placeholder="${lastnamePlaceholder}" />
+        </div>
+        <div class="form-group">
             <form:input type="email" path="email" placeholder="Email" />
         </div>
         <div class="form-group">

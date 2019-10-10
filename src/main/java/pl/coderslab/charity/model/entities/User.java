@@ -12,6 +12,8 @@ public class User extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String username;
+    private String firstname;
+    private String lastname;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
@@ -24,6 +26,7 @@ public class User extends BaseEntity {
         super();
         this.enabled = false;
     }
+
 
     @Override
     public String toString() {
