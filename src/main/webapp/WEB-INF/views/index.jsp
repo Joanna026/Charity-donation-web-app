@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,7 +14,14 @@
     <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<sec:authorize access="isAnonymous()">
+    <%@include file="header.jsp" %>
+</sec:authorize>
+
+<sec:authorize access="hasRole('USER')">
+    <%@include file="loggedInHeader.jsp"%>
+</sec:authorize>
+
 
 <section class="stats">
     <div class="container container--85">
@@ -61,7 +69,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large"><spring:message code="createAccount.message"/></a>
+    <a href="<c:url value="/add"/>" class="btn btn--large"><spring:message code="createAccount.message"/></a>
 </section>
 
 <section class="about-us">

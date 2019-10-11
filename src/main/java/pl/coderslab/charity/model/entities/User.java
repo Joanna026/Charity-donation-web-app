@@ -19,7 +19,7 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
     private Boolean enabled;
-    @OneToOne
+    @ManyToOne
     private Role authority;
 
     public User() {

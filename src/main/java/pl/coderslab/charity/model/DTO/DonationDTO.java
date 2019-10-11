@@ -17,8 +17,9 @@ public class DonationDTO {
     private String street;
     private String city;
     private String zipCode;
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
     private String pickUpDateS;
     private LocalTime pickUpTime;
     private String pickUpComment;

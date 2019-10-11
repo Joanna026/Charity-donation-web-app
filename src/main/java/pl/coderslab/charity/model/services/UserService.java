@@ -29,11 +29,11 @@ public class UserService {
     }
 
 
-    private UserDTO toDto(User user) {
+    public UserDTO toDto(User user) {
         return modelMapper.map(user, UserDTO.class);
     }
 
-    private User toEntity(UserDTO userDTO) {
+    public User toEntity(UserDTO userDTO) {
         return modelMapper.map(userDTO, User.class);
     }
 

@@ -16,7 +16,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="loggedInHeader.jsp"%>
 
 <section class="form--steps">
     <div class="form--steps-instructions">
@@ -68,7 +68,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         <spring:message code="step2Label.message"/>
-                        <input type="number" name="bags" id="quantity" step="1" min="1" />
+                        <form:input path="quantity" type="number" name="bags" id="quantity" step="1" min="1" />
                     </label>
                 </div>
 
@@ -137,7 +137,7 @@
                     <div class="form-section--column">
                         <h4><spring:message code="pickUpTime.message"/> </h4>
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDateS" id="date" type="date" pattern = "dd-MM-yyyy"/> </label>
+                            <label> <spring:message code="date.message"/>  <form:input path="pickUpDateS" id="date" type="date" pattern = "yyyy-MM-dd"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">

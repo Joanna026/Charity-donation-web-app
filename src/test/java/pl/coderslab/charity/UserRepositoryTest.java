@@ -36,6 +36,7 @@ public class UserRepositoryTest {
     }
 
 
+
     @Test
     public void findByUsernameTestNoResult() {
         User user = new User();

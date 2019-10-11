@@ -17,27 +17,7 @@
 </head>
 <body>
 <header class="header--form-page">
-    <nav class="container container--70">
-        <ul class="nav--actions">
-            <li class="logged-user">
-                <spring:message code="hello.message" arguments="${'#httpServletRequest.remoteUser'}"/>
-                <ul class="dropdown">
-                    <li><a href="#"><spring:message code="myProfile.message"/></a></li>
-                    <li><a href="#"><spring:message code="myDonations.message"/></a></li>
-                    <li><a href="#"><spring:message code="logout.message"/></a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul>
-            <li><a href="#" class="btn btn--without-border active"><spring:message code="start.message"/></a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="what.message"/></a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="aboutUsTitle.message"/> </a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="institutions.message"/></a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="contact.message"/></a></li>
-        </ul>
-    </nav>
-
+    <%@include file="loggedInHeader.jsp"%>
     <div class="slogan container container--90">
         <h2>
             <spring:message code="thankYou.message"/>
