@@ -9,6 +9,8 @@ import pl.coderslab.charity.model.entities.User;
 import pl.coderslab.charity.model.repositories.RoleRepository;
 import pl.coderslab.charity.model.repositories.UserRepository;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -37,7 +39,7 @@ public class UserService {
         return modelMapper.map(userDTO, User.class);
     }
 
-    public void saveUser(UserDTO userDTO) {
+    public Long saveUser(UserDTO userDTO) {
         User user = toEntity(userDTO);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(true);
@@ -45,5 +47,15 @@ public class UserService {
         user.setAuthority(userRole);
 
         userRepository.save(user);
+        User savedUser = userRepository.findByUsername(user.getUsername());
+
+        return savedUser.getId();
+    }
+
+    public void findByIdAndEnable(Long userId) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        optionalUser.ifPresent(user -> {
+            user.setEnabled(true);
+        });
     }
 }

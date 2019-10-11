@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
 </head>
 <body>
+
+<%--depending includeded header version on authorisation--%>
+
 <sec:authorize access="isAnonymous()">
     <%@include file="header.jsp" %>
 </sec:authorize>
@@ -22,6 +25,7 @@
     <%@include file="loggedInHeader.jsp"%>
 </sec:authorize>
 
+<%--displaying total quantity of donated bags and supported institutions--%>
 
 <section class="stats">
     <div class="container container--85">
@@ -42,6 +46,8 @@
 
     </div>
 </section>
+
+<%--description of donating precedure--%>
 
 <section class="steps">
     <h2><spring:message code="intro.message"/></h2>
@@ -72,6 +78,8 @@
     <a href="<c:url value="/add"/>" class="btn btn--large"><spring:message code="createAccount.message"/></a>
 </section>
 
+<%--description of organisation goals--%>
+
 <section class="about-us">
     <div class="about-us--text">
         <h2><spring:message code="aboutUsTitle.message"/></h2>
@@ -84,6 +92,8 @@
                                       alt="People in circle"/>
     </div>
 </section>
+
+<%--list of all available institutions--%>
 
 <section class="help">
     <h2><spring:message code="helpTitle.message"/></h2>
