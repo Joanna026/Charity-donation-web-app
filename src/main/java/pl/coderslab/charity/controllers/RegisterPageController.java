@@ -14,11 +14,10 @@ import pl.coderslab.charity.model.services.UserService;
 public class RegisterPageController {
 
     private final UserService userService;
-    private final EmailService emailService;
 
-    public RegisterPageController(UserService userService, EmailService emailService) {
+
+    public RegisterPageController(UserService userService) {
         this.userService = userService;
-        this.emailService = emailService;
     }
 
     @GetMapping("/add")
@@ -31,16 +30,14 @@ public class RegisterPageController {
     public String processRegisterPage(UserDTO userDTO){
         userDTO.setId(null);
         Long newUserId = userService.saveUser(userDTO);
-        emailService.sendSimpleMessage(userDTO.getEmail(), "Aktywacja konta",
-                "Aby dokończyć proces rejestracji, kliknij w poniższy link: \n " +
-                        "http://localhost:8080/activate?id="+newUserId);
+
 
         return "confirmationRequest";
     }
 
     @RequestMapping("/activate")
-    public String processActivationLink(@PathVariable Long userToActivateId) {
-        userService.findByIdAndEnable(userToActivateId);
+    public String processActivationLink(@PathVariable String token) {
+
 
         return "redirect:/login";
     }
