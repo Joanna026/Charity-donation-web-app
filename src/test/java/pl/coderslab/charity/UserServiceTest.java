@@ -35,7 +35,7 @@ public class UserServiceTest {
         passwordEncoder = mock(BCryptPasswordEncoder.class);
         modelMapper = mock(ModelMapper.class);
         roleRepository = mock(RoleRepository.class);
-        userService = new UserService(userRepository, modelMapper, passwordEncoder, roleRepository);
+//        userService = new UserService(userRepository, modelMapper, passwordEncoder, roleRepository);
     }
 
     @Test

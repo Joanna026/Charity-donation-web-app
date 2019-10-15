@@ -49,10 +49,9 @@ public class UserService {
     public Long saveUser(UserDTO userDTO) {
         User user = toEntity(userDTO);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(true);
         Role userRole = roleRepository.findByAuthority("ROLE_USER");
         user.setAuthority(userRole);
-
+        user.setEnabled(false);
         userRepository.save(user);
         User savedUser = userRepository.findByUsername(user.getUsername());
 
@@ -66,10 +65,11 @@ public class UserService {
         return savedUser.getId();
     }
 
-    public void findByIdAndEnable(Long userId) {
-        Optional<User> optionalUser = userRepository.findById(userId);
-        optionalUser.ifPresent(user -> {
-            user.setEnabled(true);
-        });
-    }
+//    public void findByIdAndEnable(Long userId) {
+//        Optional<User> optionalUser = userRepository.findById(userId);
+//        optionalUser.ifPresent(user -> {
+//            user.setEnabled(true);
+//            userRepository.save(user);
+//        });
+//    }
 }

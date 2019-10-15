@@ -4,4 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import pl.coderslab.charity.model.entities.VerificationToken;
 
 public interface TokenRepository extends JpaRepository<VerificationToken, Long> {
+    VerificationToken findByToken(String token);
 }

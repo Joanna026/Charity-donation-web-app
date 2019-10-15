@@ -24,6 +24,10 @@ public class VerificationToken implements Serializable {
     private User user;
     private Date expiryDate;
 
+    public VerificationToken() {
+        this.expiryDate = calculateExpiryDate(EXPIRATION);
+    }
+
     private Date calculateExpiryDate(int expiryTimeInMinutes) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Timestamp(cal.getTime().getTime()));

@@ -18,13 +18,13 @@
 <body>
 <header class="header--form-page">
     <%@include file="loggedInHeader.jsp"%>
-    <div class="slogan container container--90">
-        <h2>
-            <spring:message code="thankYou.message"/>
-        </h2>
-    </div>
 </header>
 
+<div class="slogan container container--90">
+    <h2>
+        <spring:message code="thankYou.message"/>
+    </h2>
+</div>
 
 <%@include file="footer.jsp"%>
 

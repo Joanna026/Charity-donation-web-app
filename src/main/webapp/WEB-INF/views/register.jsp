@@ -22,7 +22,7 @@
     <form:form method="post" modelAttribute="userDTO">
         <div class="form-group">
             <spring:message code="username.placeholder" var="usernamePlaceholder"/>
-            <form:input type="text" path="username" placeholder="${usernamePlaceholder}" />
+            <form:input type="text" path="username" placeholder="${usernamePlaceholder}" autofocus="true"/>
         </div>
         <div class="form-group">
             <spring:message code="firstname.placeholder" var="firstnamePlaceholder"/>
