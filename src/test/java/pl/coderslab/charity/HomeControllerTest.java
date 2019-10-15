@@ -3,6 +3,8 @@ package pl.coderslab.charity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -38,16 +40,20 @@ public class HomeControllerTest {
     @MockBean
     private InstitutionService institutionService;
 
-    @Before
-    public void setUp() {
-//      Mock mockMvc = webAppContextSetup(webApplicationContext).build();
 
-        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
-        when(this.institutionService.getAll()).thenReturn(institutions);
-    }
+//    @Before
+//    public void setUp() {
+////      Mock mockMvc = webAppContextSetup(webApplicationContext).build();
+//
+//        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
+//        when(this.institutionService.getAll()).thenReturn(institutions);
+//    }
 
     @Test
     public void test_home_contains_institution_list() throws Exception {
+
+        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
+        when(this.institutionService.getAll()).thenReturn(institutions);
 
         mockMvc.perform(get("/"))
                 .andExpect(model().attributeExists("institutions"))
