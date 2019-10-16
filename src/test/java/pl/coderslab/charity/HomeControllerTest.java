@@ -42,14 +42,6 @@ public class HomeControllerTest {
 
 
 
-//    @Before
-//    public void setUp() {
-////      Mock mockMvc = webAppContextSetup(webApplicationContext).build();
-//
-//        List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
-//        when(this.institutionService.getAll()).thenReturn(institutions);
-//    }
-
     @Test
     public void test_home_contains_institution_list() throws Exception {
 

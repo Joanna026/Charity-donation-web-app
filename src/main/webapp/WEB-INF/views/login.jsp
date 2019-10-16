@@ -23,7 +23,7 @@
     <h2><spring:message code="login.message"/></h2>
     <form action="login" method="POST">
         <div class="form-group">
-            <input type="text" name="username" placeholder="<spring:message code="username.placeholder"/>" />
+            <input type="text" name="username" placeholder="<spring:message code="username.placeholder"/>" autofocus/>
         </div>
         <div class="form-group">
             <input type="password" name="password" placeholder="<spring:message code="password.placeholder"/>" />
