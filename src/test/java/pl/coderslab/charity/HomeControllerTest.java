@@ -1,19 +1,17 @@
 package pl.coderslab.charity;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
+import pl.coderslab.charity.config.SecurityConfig;
 import pl.coderslab.charity.controllers.HomeController;
 import pl.coderslab.charity.model.DTO.InstitutionDTO;
+import pl.coderslab.charity.model.services.DonationService;
 import pl.coderslab.charity.model.services.InstitutionService;
 
 import java.util.Arrays;
@@ -25,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = HomeController.class)
+@WebMvcTest(HomeController.class)
 public class HomeControllerTest {
 
     @Autowired
@@ -39,6 +37,9 @@ public class HomeControllerTest {
 
     @MockBean
     private InstitutionService institutionService;
+    @MockBean
+    private DonationService donationService;
+
 
 
 //    @Before
@@ -55,11 +56,10 @@ public class HomeControllerTest {
         List<InstitutionDTO> institutions = Arrays.asList(new InstitutionDTO());
         when(this.institutionService.getAll()).thenReturn(institutions);
 
-        mockMvc.perform(get("/"))
+        this.mockMvc.perform(get("/"))
                 .andExpect(model().attributeExists("institutions"))
                 .andExpect(model().attribute("institutions", hasSize(1)))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType("text/html;charset=UTF-8"))
                 .andExpect(view().name(HOME_VIEW));
     }
 }

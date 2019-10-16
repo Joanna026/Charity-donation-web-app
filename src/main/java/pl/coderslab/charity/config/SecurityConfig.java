@@ -5,26 +5,32 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.coderslab.charity.model.services.SpringDataUserDetailsService;
 
 import javax.sql.DataSource;
+
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
 
     public SecurityConfig(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
+//    @Bean
+//    public DataSource dataSource() {
+//        return dataSource();
+//    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return passwordEncoder();
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
     @Bean

@@ -3,10 +3,9 @@ package pl.coderslab.charity.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.charity.model.services.DonationService;
-import pl.coderslab.charity.model.services.EmailService;
-import pl.coderslab.charity.model.services.InstitutionService;
 import pl.coderslab.charity.model.DTO.InstitutionDTO;
+import pl.coderslab.charity.model.services.DonationService;
+import pl.coderslab.charity.model.services.InstitutionService;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +17,7 @@ public class HomeController {
     private InstitutionService institutionService;
     private DonationService donationService;
 
-    public HomeController(InstitutionService institutionService, DonationService donationService, EmailService emailService) {
+    public HomeController(InstitutionService institutionService, DonationService donationService) {
         this.institutionService = institutionService;
         this.donationService = donationService;
     }
