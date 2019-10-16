@@ -21,10 +21,12 @@
     <%@include file="header.jsp" %>
 </sec:authorize>
 
-<sec:authorize access="hasRole('USER')">
+<sec:authorize access="hasAnyRole('USER', 'ADMIN')">
     <%@include file="loggedInHeader.jsp"%>
 </sec:authorize>
 
+
+<sec:authorize access="hasRole('USER')">
 <%--displaying total quantity of donated bags and supported institutions--%>
 
 <section class="stats">
@@ -119,6 +121,14 @@
     </div>
 
 </section>
+
+</sec:authorize>
+
+
+<sec:authorize access="hasRole('ADMIN')">
+
+</sec:authorize>
+
 
 <%@include file="footer.jsp" %>
 
