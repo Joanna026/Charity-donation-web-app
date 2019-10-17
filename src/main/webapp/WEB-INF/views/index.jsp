@@ -15,18 +15,23 @@
 </head>
 <body>
 
-<%--depending includeded header version on authorisation--%>
+<%--depending includeded header version on authorisation and role--%>
 
 <sec:authorize access="isAnonymous()">
     <%@include file="header.jsp" %>
 </sec:authorize>
 
-<sec:authorize access="hasAnyRole('USER', 'ADMIN')">
+<sec:authorize access="hasRole('USER')">
     <%@include file="loggedInHeader.jsp"%>
 </sec:authorize>
 
+<sec:authorize access="hasRole('ADMIN')">
+    <%@include file="adminHeader.jsp"%>
+</sec:authorize>
 
+<%--HOMEPAGE FOR USER ROLE--%>
 <sec:authorize access="hasRole('USER')">
+
 <%--displaying total quantity of donated bags and supported institutions--%>
 
 <section class="stats">
@@ -124,7 +129,7 @@
 
 </sec:authorize>
 
-
+<%--HOMEPAGE FOR ADMIN ROLE--%>
 <sec:authorize access="hasRole('ADMIN')">
 
 </sec:authorize>

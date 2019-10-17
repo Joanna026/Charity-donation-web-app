@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<%@include file="loggedInHeader.jsp" %>
+<%@include file="adminHeader.jsp" %>
 
 <section class="help">
     <h2><spring:message code="listTitle.message"/></h2>

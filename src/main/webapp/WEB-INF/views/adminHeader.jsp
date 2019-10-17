@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: joanna
-  Date: 10/11/19
-  Time: 11:26 AM
+  Date: 10/17/19
+  Time: 11:27 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -31,21 +31,19 @@
                 <spring:message code="hello.message" arguments="${pageContext.request.userPrincipal.name}"/>
                 <ul class="dropdown">
                     <li><a href="#"><spring:message code="myProfile.message"/></a></li>
-                    <li><a href="#"><spring:message code="myDonations.message"/></a></li>
                     <li><a href="<c:url value="/logout"/>"><spring:message code="logout.message"/></a></li>
                 </ul>
             </li>
         </ul>
 
         <ul>
-            <li><a href="<c:url value="/donation"/>" class="btn btn--without-border active"><spring:message code="start.message"/></a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="what.message"/></a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="aboutUsTitle.message"/> </a></li>
-            <li><a href="#" class="btn btn--without-border"><spring:message code="institutions.message"/></a></li>
+            <li><a href="<c:url value="/"/>" class="btn btn--without-border active"><spring:message code="start.message"/></a></li>
+            <li><a href="<c:url value="/admin/institutions"/>" class="btn btn--without-border"><spring:message code="institutions.message"/></a></li>
             <li><a href="#" class="btn btn--without-border"><spring:message code="contact.message"/></a></li>
         </ul>
     </nav>
 </header>
+
 
 </body>
 </html>
