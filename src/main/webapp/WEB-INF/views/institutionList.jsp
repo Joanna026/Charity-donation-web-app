@@ -35,6 +35,9 @@
                     </div>
                 </li>
             </c:forEach>
+            <li>
+                <a href="<c:url value="/admin/institution/add"/>" class="btn btn--without-border active"><spring:message code="addInstitution.message"/></a>
+            </li>
         </ul>
     </div>
 
