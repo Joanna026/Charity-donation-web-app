@@ -25,18 +25,23 @@
 
     <div class="help--slides active" data-id="1">
 
-        <ul class="help--slides-items">
-            <c:forEach items="${institutions}" var="institution" varStatus="count">
+        <ul class="help--slides-items" style="text-align: left">
+            <c:forEach items="${institutions}" var="institution" varStatus="counter">
                 <li>
                     <div class="col">
-                        <div class="title">${count.count}. ${institution.name}</div>
+                        <div class="title"> ${counter.count}. ${institution.name}
+                            <a href="#" class="btn btn--without-border"><spring:message code="edit.message"/></a>
+                            <a href="<c:url value="/admin/institutions/delete?id=${institution.id}"/>"
+                               class="btn btn--without-border"><spring:message code="delete.message"/></a>
+                        </div>
                         <div class="subtitle"><spring:message code="foundationGoals.message"
                                                               arguments="${institution.description}"/></div>
                     </div>
                 </li>
             </c:forEach>
             <li>
-                <a href="<c:url value="/admin/institution/add"/>" class="btn btn--without-border active"><spring:message code="addInstitution.message"/></a>
+                <a href="<c:url value="/admin/institution/add"/>" class="btn btn--without-border active"><spring:message
+                        code="addInstitution.message"/></a>
             </li>
         </ul>
     </div>

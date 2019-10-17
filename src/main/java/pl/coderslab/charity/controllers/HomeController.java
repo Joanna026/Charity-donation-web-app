@@ -33,7 +33,7 @@ public class HomeController {
 
         model.addAttribute("totalQuantity", donationService.getTotalQuantity());
 
-        Optional<Integer> optionalCountInsititutions = institutionService.countAllBy();
+        Optional<Integer> optionalCountInsititutions = institutionService.countAllInstitutions();
         optionalCountInsititutions.ifPresent(institutionNumber -> {
             model.addAttribute("institutionNumber", institutionNumber);
         });

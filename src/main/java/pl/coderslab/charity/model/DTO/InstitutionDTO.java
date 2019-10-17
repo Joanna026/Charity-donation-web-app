@@ -16,7 +16,9 @@ public class InstitutionDTO {
     @NotBlank
     private String name;
     private String description;
+    private Boolean archived;
 
     public InstitutionDTO() {
+        this.setArchived(false);
     }
 }

@@ -16,6 +16,7 @@ public class Institution extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
     private String description;
+    private Boolean archived;
 
 
     @Override

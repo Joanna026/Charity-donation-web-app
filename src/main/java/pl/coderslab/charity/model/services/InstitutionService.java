@@ -31,10 +31,18 @@ public class InstitutionService {
     public List<InstitutionDTO> getAll() {
         List<InstitutionDTO> institutionDtoList = new ArrayList<>();
 
-        for(Institution institution : institutionRepository.findAll()) {
+        for(Institution institution : institutionRepository.findAllByArchivedFalse()) {
             institutionDtoList.add(toDto(institution));
         }
         return institutionDtoList;
+    }
+
+    public void softDeleteById(Long id) {
+        Optional<Institution> institutionToDelete = institutionRepository.findById(id);
+        institutionToDelete.ifPresent(institution -> {
+            institution.setArchived(true);
+            institutionRepository.save(institution);
+        });
     }
 
     public void  update(InstitutionDTO institutionDTO) {
@@ -45,8 +53,8 @@ public class InstitutionService {
         institutionRepository.deleteById(id);
     }
 
-    public Optional<Integer> countAllBy(){
-        return institutionRepository.countAllBy();
+    public Optional<Integer> countAllInstitutions(){
+        return institutionRepository.countAllByInstitution();
     }
 
     private InstitutionDTO toDto(Institution institution) {
@@ -56,4 +64,6 @@ public class InstitutionService {
     private Institution toEntity(InstitutionDTO institutionDTO) {
         return modelMapper.map(institutionDTO, Institution.class);
     }
+
+
 }
