@@ -30,7 +30,8 @@
                 <li>
                     <div class="col">
                         <div class="title"> ${counter.count}. ${institution.name}
-                            <a href="#" class="btn btn--without-border"><spring:message code="edit.message"/></a>
+                            <a href="<c:url value="/admin/institution/edit?id=${institution.id}"/>"
+                               class="btn btn--without-border"><spring:message code="edit.message"/></a>
                             <a href="<c:url value="/admin/institutions/delete?id=${institution.id}"/>"
                                class="btn btn--without-border"><spring:message code="delete.message"/></a>
                         </div>

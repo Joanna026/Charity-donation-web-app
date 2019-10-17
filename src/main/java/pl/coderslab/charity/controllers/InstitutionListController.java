@@ -28,6 +28,11 @@ public class InstitutionListController {
         return "institutionList";
     }
 
+    @PostMapping("/institutions")
+    public String processInstitutionEdition(@RequestParam Long institutionId) {
+        return "redirect:/admin/institution/edit?institutionId="+institutionId;
+    }
+
     @GetMapping("/institutions/delete")
     public String processDeleteInstitution(@RequestParam Long id) {
         institutionService.softDeleteById(id);

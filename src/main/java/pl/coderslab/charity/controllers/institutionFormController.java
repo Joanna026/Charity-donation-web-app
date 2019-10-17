@@ -29,7 +29,7 @@ public class institutionFormController {
     public String processInstitutionForm(InstitutionDTO institutionDTO) {
         institutionDTO.setId(null);
         institutionService.save(institutionDTO);
-
         return "redirect:/admin/institutions";
     }
+
 }

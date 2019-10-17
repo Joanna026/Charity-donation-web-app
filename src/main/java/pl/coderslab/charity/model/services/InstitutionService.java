@@ -31,7 +31,7 @@ public class InstitutionService {
     public List<InstitutionDTO> getAll() {
         List<InstitutionDTO> institutionDtoList = new ArrayList<>();
 
-        for(Institution institution : institutionRepository.findAllByArchivedFalse()) {
+        for (Institution institution : institutionRepository.findAllByArchivedFalse()) {
             institutionDtoList.add(toDto(institution));
         }
         return institutionDtoList;
@@ -45,15 +45,23 @@ public class InstitutionService {
         });
     }
 
-    public void  update(InstitutionDTO institutionDTO) {
-        institutionRepository.save(toEntity(institutionDTO));
+    public void update(InstitutionDTO institutionDTO) {
+
+        Optional<Institution> institutionToEdit = institutionRepository.findById(institutionDTO.getId());
+        institutionToEdit.ifPresent(institution -> {
+            institution.setName(institutionDTO.getName());
+            institution.setDescription(institutionDTO.getDescription());
+            institution.setArchived(false);
+            institutionRepository.save(institution);
+        });
+
     }
 
     public void deleteById(Long id) {
         institutionRepository.deleteById(id);
     }
 
-    public Optional<Integer> countAllInstitutions(){
+    public Optional<Integer> countAllInstitutions() {
         return institutionRepository.countAllByInstitution();
     }
 
@@ -66,4 +74,9 @@ public class InstitutionService {
     }
 
 
+    public InstitutionDTO getById(Long institutionId) {
+        return toDto(institutionRepository.findById(institutionId).orElseGet(() -> {
+            return null;
+        }));
+    }
 }
